@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "clsx": "^2.1.1",
