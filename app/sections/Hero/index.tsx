@@ -5,8 +5,8 @@ type Props = {}
 
 const Hero = (props: Props) => {
   return (
-    <div data-h1 className="grid h-screen items-center justify-center">
-      <div className="content flex flex-col items-center justify-center">
+    <section className="grid h-screen items-center justify-center">
+      <div className="content -mt-40 flex flex-col items-center">
         <RevealText
           revealFrom="right"
           delay={0.6}
@@ -22,7 +22,7 @@ const Hero = (props: Props) => {
         </div>
         <TagLine />
       </div>
-    </div>
+    </section>
   )
 }
 

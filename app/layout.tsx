@@ -4,6 +4,7 @@ import { Gabarito, Azeret_Mono } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/utils/cn'
 import BinaryBackground from './sections/BinaryBackground'
+import Navbar from '@/app/sections/Navbar'
 
 const gabaritoSans = Gabarito({
   variable: '--font-gabarito-sans',
@@ -35,6 +36,7 @@ export default function RootLayout({
         )}>
         <BinaryBackground />
         {children}
+        <Navbar />
       </body>
     </html>
   )

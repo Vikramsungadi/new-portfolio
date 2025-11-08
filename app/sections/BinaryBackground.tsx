@@ -33,7 +33,7 @@ const BinaryBackground = ({ cellSize = 30 }: Props) => {
     }
   }, [cellSize])
 
-  if (!visible) return null // hide component initially
+  if (!visible) return null
 
   return (
     <motion.div
@@ -43,7 +43,7 @@ const BinaryBackground = ({ cellSize = 30 }: Props) => {
         gridTemplateColumns: `repeat(auto-fill, minmax(${cellSize}px, 1fr))`,
         lineHeight: `${cellSize}px`,
         backgroundImage:
-          'linear-gradient(to bottom, var(--background), rgba(255,255,255,0.04) 30%, var(--background) 60%)',
+          'linear-gradient(to bottom, var(--background), rgba(255,255,255,0.06) 30%, var(--background) 60%)',
         backgroundSize: '100% 200%',
       }}
       animate={{
