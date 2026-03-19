@@ -5,8 +5,7 @@ type Props = {}
 const HighlightText = ({ delay, text }: { delay: number; text: string }) => {
   return (
     <motion.span
-      className="inline-block"
-      animate={{ color: ['#777777', '#ffffff'] }}
+      animate={{ color: ['#777777', 'rgba(255,255,255,0.9)'] }}
       transition={{ delay: delay, duration: 1 }}>
       {text}
     </motion.span>
@@ -19,8 +18,8 @@ const TagLine = (props: Props) => {
   const textAnimationDelay = 2 + TEXT.length * 0.02
 
   return (
-    <div className="stack">
-      <p className="stack-item pointer-events-none touch-none text-xl">
+    <div className="stack px-9">
+      <p className="stack-item pointer-events-none touch-none text-center text-xl">
         {TEXT.split('').map((letter, index) => {
           return (
             <motion.span
@@ -37,10 +36,10 @@ const TagLine = (props: Props) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: textAnimationDelay }}
-        className="stack-item text-xl text-[#777777]">
-        I build <HighlightText delay={textAnimationDelay + 0.15} text="Websites" />,{' '}
+        className="stack-item text-center text-xl text-[#777777]">
+        I build <HighlightText delay={textAnimationDelay + 0.15} text="Websites," />{' '}
         <HighlightText delay={textAnimationDelay + 0.3} text="Mobile Apps" /> and{' '}
-        <HighlightText delay={textAnimationDelay + 0.3} text="Shopify Stores" />.
+        <HighlightText delay={textAnimationDelay + 0.3} text="Shopify Stores." />
       </motion.p>
     </div>
   )

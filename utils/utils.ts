@@ -66,3 +66,29 @@ export const removeSpaces = (sentence: string) => {
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.slice(1)
 }
+
+export function formatToMonthYear(input: string | Date): string {
+  let date: Date
+
+  if (input instanceof Date) {
+    date = input
+  } else {
+    date = new Date(input)
+
+    // If browser cannot parse (e.g., "16-05-2025"), try DD-MM-YYYY
+    if (isNaN(date.getTime())) {
+      const parts = input.split('-')
+      if (parts.length === 3) {
+        const [day, month, year] = parts.map(Number)
+        date = new Date(year, month - 1, day)
+      }
+    }
+  }
+
+  if (isNaN(date.getTime())) return ''
+
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+  }).format(date)
+}

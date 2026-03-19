@@ -83,7 +83,7 @@ const RevealText = ({ text, delay = 0, revealFrom = 'bottom', ...props }: Props)
         return (
           <div key={wordIndex} className="flex">
             {word.split('').map((letter, letterIndex) => (
-              <span className="inline-flex overflow-y-hidden" key={letterIndex}>
+              <span className="inline-flex" key={letterIndex}>
                 <MotionComponent
                   as="span"
                   initial="hidden"
